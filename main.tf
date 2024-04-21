@@ -13,6 +13,11 @@ resource "aws_autoscaling_group" "example" {
   }
 
   vpc_zone_identifier = ["subnet-0f4c1defbfc3bb126"]  # Specify your subnet IDs
+ termination_policies = [
+    "OldestInstance",
+    "Default"
+  ]
+ }
 
   tag {
     key                 = "Name"
